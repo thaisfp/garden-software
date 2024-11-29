@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="aa952c59-67f0-451a-beb5-3ca58995b1db">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dtNasc" class="java.util.Date">
+		<fieldDescription><![CDATA[dtNasc]]></fieldDescription>
+	</field>
+	<field name="cpf" class="java.lang.String">
+		<fieldDescription><![CDATA[cpf]]></fieldDescription>
+	</field>
+	<field name="cidade" class="model.Cidade">
+		<fieldDescription><![CDATA[cidade]]></fieldDescription>
+	</field>
+	<field name="endereco" class="model.Endereco">
+		<fieldDescription><![CDATA[endereco]]></fieldDescription>
+	</field>
+	<field name="idCliente" class="java.lang.Integer">
+		<fieldDescription><![CDATA[idCliente]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[nome]]></fieldDescription>
+	</field>
+	<field name="telPrimario" class="java.lang.String">
+		<fieldDescription><![CDATA[telPrimario]]></fieldDescription>
+	</field>
+	<field name="telSecundario" class="java.lang.String">
+		<fieldDescription><![CDATA[telSecundario]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="11" y="0" width="77" height="79" uuid="16c06907-3972-45c6-9152-f4b4aa16bd83"/>
+				<imageExpression><![CDATA["C:\\Users\\thais\\OneDrive\\Área de Trabalho\\PERIODOS FACULDADE\\5 PERIODO\\POO2\\MeuSistema\\meuProjeto\\src\\main\\resources\\img\\logoAtuGrande.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="104" y="19" width="269" height="60" uuid="ab9d888e-96f7-4ecc-9eda-71d25b87031d"/>
+				<textElement>
+					<font fontName="Arial" size="24" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Garden Software]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="453" y="0" width="100" height="20" uuid="0207465f-a878-4baa-9b03-dc1cfa7a5557"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="63" height="20" uuid="e5bf93f2-7141-4f70-8099-87399583be51"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="63" y="0" width="143" height="20" uuid="e28a87ad-1174-48c1-8776-7800aa3970f2"/>
+				<text><![CDATA[nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="206" y="0" width="100" height="20" uuid="1b9e1cbd-1b20-46e1-b505-f7b660d39912"/>
+				<text><![CDATA[Data de Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="306" y="0" width="149" height="20" uuid="f99e8d43-ec29-4e7e-b4c2-b6737b97de5b"/>
+				<text><![CDATA[cpf]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="453" y="0" width="100" height="20" uuid="8bcf723f-bae4-4c00-b4f6-b173c6922331"/>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="63" height="20" uuid="b4f7a6af-81d9-4603-ad24-bcecd636622a"/>
+				<textFieldExpression><![CDATA[$F{idCliente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="63" y="0" width="143" height="20" uuid="eb78bdf6-36ad-455b-b97c-e175cb362423"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="206" y="0" width="100" height="20" uuid="a6b33aaf-6da8-40ac-8ea5-84a6173c6e59"/>
+				<textFieldExpression><![CDATA[$F{dtNasc}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="0" width="149" height="20" uuid="5178e413-5a29-4998-94bc-f1a579d97637"/>
+				<textFieldExpression><![CDATA[$F{cpf}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="455" y="0" width="100" height="20" uuid="6107fbb0-3921-462a-9e1a-12373b9f0c35"/>
+				<textFieldExpression><![CDATA[$F{telPrimario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
